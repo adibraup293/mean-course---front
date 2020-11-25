@@ -1,0 +1,60 @@
+.select-btn, .new-patient-btn{
+  color:white;
+  margin: 5px;
+  background-color: black;
+  width: 200px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: medium;
+}
+
+.new-patient-btn{
+  width: 510px;
+}
+
+.select-patient-page-content{
+  margin: auto;
+  text-align: center;
+  height: 350px;
+  padding: 50px 0;
+}
+
+.id-input{
+  margin: auto;
+  width: 300px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-footer{
+  margin: auto;
+  text-align: center;
+  height: 60px;
+  padding: 50px 0;
+}
+
+.back-btn{
+  color:white;
+  margin: 5px;
+  background-color: black;
+  width: 200px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: medium;
+}
+
+.cell-padding, .symptomps-cell{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.row-border{
+  border: 1px solid black;
+}
+
+.test-id-list{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 96%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+

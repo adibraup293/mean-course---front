@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+
+  <span>
+    <a routerLink ="/">Covid Testing Information System (CTIS)</a>
+  </span>
+
+  <span class = "spacer">
+
+  </span>
+
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent"> New Post</a>
+    </li>
+
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/list" routerLinkActive="mat-accent"> List</a>
+    </li>
+
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/login"><button mat-raised-button class="toolbar-btn">Login</button></a>
+    </li>
+
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()" > logout</button>
+    </li>
+  </ul>
+
+</mat-toolbar>

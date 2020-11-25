@@ -1,0 +1,24 @@
+<mat-card>
+  <h1 class="main-title" >Create a Test Center profile!</h1>
+  <form (submit)="onSaveTestCentre(testCentreForm)" #testCentreForm="ngForm">
+    <div class=page-content>
+      <mat-form-field>
+        <input
+          matInput
+          name="testcentrename"
+          type="text"
+          placeholder="Enter test centre name here..."
+          [ngModel]="testCentre?.testcentrename"
+          minlength="3"
+          #testcentrename="ngModel"
+          required><br><br>
+          <mat-error *ngIf="testcentrename.invalid">Please enter a test centre name</mat-error>
+      </mat-form-field>
+
+      <button
+    mat-raised-button
+    class="create-btn"
+    type="submit">Create</button>
+    </div>
+  </form>
+</mat-card>
