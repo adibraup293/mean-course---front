@@ -13,7 +13,7 @@ const checkAuth = require('./middleware/check-auth');
 //Use express function and save as an app constant
 const app = express()
 
-mongoose.connect("mongodb+srv://sadip:f1b0X2jNrfnxnNF0@cluster0.hlfhy.mongodb.net/node-angular?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://max:8bGPGq0OT0DOPaVo@cluster0.xihgz.mongodb.net/node-angular?retryWrites=true&w=majority")
   .then(() => {
     console.log('Connected to database');
   })
