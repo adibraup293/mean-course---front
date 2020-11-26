@@ -10,7 +10,7 @@ import {TestKitsService} from '../testKit.service';
 })
 
 export class UpdateTestKitComponent implements OnInit, OnDestroy{
-  testKits: TestKit[] = [];
+  testkits: TestKit[] = [];
   private testKitsSub: Subscription;
   constructor(public testKitsService: TestKitsService){}
 
@@ -18,10 +18,19 @@ export class UpdateTestKitComponent implements OnInit, OnDestroy{
     this.testKitsService.getTestKits();
     this.testKitsSub = this.testKitsService.getTestKitsUpdateListener()
     .subscribe((testKits: TestKit[]) => {
-      this.testKits = testKits;
+      this.testkits = testKits;
     });
 
   }
+
+  // ngOnInit(){
+  //   this.postsService.getPosts();
+  //   this.postsSub = this.postsService.getPostsUpdateListener()
+  //   .subscribe((posts: Post[]) => {
+  //     this.posts = posts;
+  //   });
+
+  // }
 
   onDelete(testKitId: string){
     this.testKitsService.deleteTestkit(testKitId);

@@ -32,23 +32,41 @@ export class TestKitsService{
       });
     }
 
-  // to retrieve the testkit
-  getTestKits() {
-    this.http.get<{message: string, testKits: any}>('http://localhost:3000/api/testkits/')
-      .pipe(map((testKitData) => {
-        return testKitData.testKits.map(testKit => {
-          return {
-            testkitname: testKit.testkitname,
-            testkitstock: testKit.testkitstock,
-            id: testKit._id
-          };
-        });
-      }))
-      .subscribe(transformedTestKits => {
-        this.testKits = transformedTestKits;
-        this.testKitsUpdated.next([...this.testKits]);
-      })
-  }
+   //to retrieve the testkit
+  //  getTestKits() {
+  //    this.http.get<{message: string, testkits: any}>('http://localhost:3000/api/testkits/')
+  //      .pipe(map((testkitData) => {
+  //        return testkitData.testkits.map(testkit => {
+  //          return {
+  //            testkitname: testkit.testkitname,
+  //            testkitstock: testkit.testkitstock,
+  //            id: testkit._id
+  //          };
+  //        });
+  //      }))
+  //      .subscribe(transformedTestkits => {
+  //        this.testKits = transformedTestkits;
+  //        this.testKitsUpdated.next([...this.testKits]);
+  //      })
+  //  }
+
+
+    getTestKits() {
+      this.http.get<{message: string, testKits: any}>('http://localhost:3000/api/testkits/')
+        .pipe(map((testKitData) => {
+          return testKitData.testKits.map(testKit => {
+            return {
+              testkitname: testKit.testkitname,
+              testkitstock: testKit.testkitstock,
+              id: testKit._id
+            };
+          });
+        }))
+        .subscribe(transformedTestKits => {
+          this.testKits = transformedTestKits;
+          this.testKitsUpdated.next([...this.testKits]);
+        })
+    }
 
   getTestKitsUpdateListener(){
     return this.testKitsUpdated.asObservable();
